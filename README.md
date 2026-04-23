@@ -60,12 +60,13 @@ coraza-rule-validator -conf rules.conf -json
 
 ## JSON Output Format
 
-When using `-json`, the output is:
+When using `-json`, the output includes the Coraza engine version:
 
 ```json
 {
   "valid": false,
   "message": "Rule validation failed",
+  "coraza_engine": "v3.7.0",
   "errors": [
     {
       "type": "regex_compilation",
@@ -158,6 +159,17 @@ fi
 | Full Caddy + coraza-caddy | ~65 MB |
 
 The standalone validator is ~75% smaller because it doesn't include Caddy's HTTP server, TLS, admin API, etc.
+
+## Version Compatibility
+
+The validator reports which Coraza engine version it uses:
+
+```bash
+$ coraza-rule-validator -version
+coraza-rule-validator version dev (coraza engine v3.7.0)
+```
+
+Ensure your deployment environment uses a compatible Coraza version. If your production WAF uses an older version, rules that pass validation here may behave differently there.
 
 ## License
 

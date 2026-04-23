@@ -57,7 +57,7 @@ func TestValidateRules(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			result := validateRules(tt.directives)
+			result := validateRules(tt.directives, "<test>")
 
 			if result.Valid != tt.wantValid {
 				t.Errorf("validateRules() valid = %v, want %v", result.Valid, tt.wantValid)
@@ -124,7 +124,7 @@ func TestValidateRulesFromFile(t *testing.T) {
 
 			// Validate via Include directive
 			directives := "Include " + testFile
-			result := validateRules(directives)
+			result := validateRules(directives, testFile)
 
 			if result.Valid != tt.wantValid {
 				t.Errorf("validateRules() valid = %v, want %v", result.Valid, tt.wantValid)
