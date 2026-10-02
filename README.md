@@ -1,8 +1,15 @@
 # coraza-rule-validator
 
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+
 A standalone CLI tool for validating ModSecurity/Coraza WAF rules before deployment.
 
 Uses the [Coraza WAF](https://github.com/corazawaf/coraza) engine to parse and compile rules, catching errors that static analysis might miss — including regex compilation issues, unknown variables, invalid operators, and more.
+
+## Documentation & Architecture
+
+* [Read the full technical deep dive on rule validation](https://atomicedge.io/coraza-rule-validator-for-atomic-edge-safe-modsecurity-rule-validation-before-production/)
+* [Protect your WordPress site with Atomic Edge WAF](https://atomicedge.io)
 
 ## Why?
 
